@@ -7,15 +7,15 @@ plugins {
 }
 
 android {
-    namespace = "com.example.mytodolist"
+    namespace = "com.codingku.rutiner.app"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.mytodolist"
+        applicationId = "com.codingku.rutiner.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
     }
 
     buildTypes {
@@ -27,8 +27,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "11"
+    kotlin {
+        compilerOptions {
+            jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
+        }
     }
     buildFeatures {
         compose = true
@@ -64,6 +66,9 @@ dependencies {
 
     // DataStore
     implementation(libs.androidx.datastore.preferences)
+
+    // AdMob
+    implementation(libs.google.admob)
 
     debugImplementation(libs.androidx.ui.tooling)
 }
